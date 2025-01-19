@@ -3,7 +3,18 @@
 #include <string.h>
 #include "pico/bootrom.h"
 
+
+#define LED_PIN_GREEN 11
 #define BUZZER 21
+
+void setLeds(bool r, bool g, bool b){
+    gpio_put(LED_PIN_GREEN, g);
+}
+
+void initLeds() {
+    gpio_init(LED_PIN_GREEN);
+    gpio_set_dir(LED_PIN_GREEN, GPIO_OUT);
+}
 
 void initBuzzer(){
     gpio_init(BUZZER);
@@ -28,13 +39,24 @@ void buzzer_on(uint buzzer_pin, float frequency, uint duration_ms){
 
 int main(){
     char comando[32];
+    initLeds();
+    initBuzzer();
     stdio_init_all();
     initBuzzer();
    
 
     while (true) {
         scanf("%s", comando);
-        
+
+        if (strcmp(comando, "GREEN") == 0 || strcmp(comando, "green") == 0) {
+            setLeds(0, 1, 0);
+            printf("LED VERDE LIGADO!\n");
+        }
+        else if(strcmp(comando, "OFF") == 0 || strcmp(comando, "off") == 0) {
+            setLeds(0, 0, 0);
+            printf("LEDS DESLIGADOS!\n");
+        }
+
         // ACIONA O BUZZER POR 2 SEGUNDOS
         if(strcmp(comando, "BUZZER") == 0 || strcmp(comando, "buzzer") == 0){
             buzzer_on(21, 440, 2000);
