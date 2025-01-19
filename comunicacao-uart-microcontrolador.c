@@ -4,6 +4,8 @@
 #include "pico/bootrom.h"
 
 #define BUZZER 21
+#define LED_PIN_GREEN 11
+#define LED_PIN_RED 13
 
 void setLeds(bool r, bool g, bool b)
 {
@@ -68,9 +70,8 @@ int main()
             setLeds(0, 0, 0);
             printf("LEDS DESLIGADOS!\n");
         }
-
         // ACIONA O BUZZER POR 2 SEGUNDOS
-        if (strcmp(comando, "BUZZER") == 0 || strcmp(comando, "buzzer") == 0)
+        else if (strcmp(comando, "BUZZER") == 0 || strcmp(comando, "buzzer") == 0)
         {
             buzzer_on(21, 440, 2000);
             printf("BUZZER ACIONADO!\n");
