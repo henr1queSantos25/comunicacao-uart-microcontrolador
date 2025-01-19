@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "author": "Grupo Embarca",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": -156.85,
+        "left": 502.75,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r4",
+        "top": 80.75,
+        "left": 336,
+        "attrs": { "value": "220" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": 44.4,
+        "left": 407.4,
+        "attrs": { "color": "blue", "flip": "" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": 32.75,
+        "left": 336,
+        "attrs": { "value": "220" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r2",
+        "top": -15.25,
+        "left": 336,
+        "attrs": { "value": "220" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led2",
+        "top": -3.6,
+        "left": 407.4,
+        "attrs": { "color": "red", "flip": "" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led3",
+        "top": -51.6,
+        "left": 407.4,
+        "attrs": { "color": "green", "flip": "" }
+      },
+      {
+        "type": "wokwi-buzzer",
+        "id": "bz1",
+        "top": -180,
+        "left": 625.8,
+        "attrs": { "volume": "0.1" }
+      }
+    ],
+    "connections": [
+      [ "r4:1", "pico:GND.4", "green", [ "v28.8", "h153.6", "v-96.04" ] ],
+      [ "r1:1", "pico:GND.4", "green", [ "v76.8", "h153.6", "v-96.04" ] ],
+      [ "r2:1", "pico:GND.4", "black", [ "v124.8", "h153.6", "v-96.04" ] ],
+      [ "bz1:1", "pico:GND.6", "black", [ "v0" ] ],
+      [ "bz1:2", "pico:GP21", "red", [ "v0" ] ],
+      [ "led3:A", "pico:GP11", "green", [ "v0" ] ],
+      [ "led2:A", "pico:GP12", "green", [ "h18.8", "v-38.4", "h57.6" ] ],
+      [ "led1:A", "pico:GP13", "green", [ "h38", "v-76.84" ] ],
+      [ "led3:C", "r2:2", "green", [ "v0" ] ],
+      [ "led2:C", "r1:2", "green", [ "v0" ] ],
+      [ "led1:C", "r4:2", "green", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
