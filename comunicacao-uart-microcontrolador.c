@@ -5,12 +5,14 @@
 
 #define BUZZER 21
 #define LED_PIN_GREEN 11
+#define LED_PIN_BLUE 12
 #define LED_PIN_RED 13
 
 void setLeds(bool r, bool g, bool b)
 {
     gpio_put(LED_PIN_RED, r);
     gpio_put(LED_PIN_GREEN, g);
+    gpio_put(LED_PIN_BLUE, b);
 }
 
 void initLeds()
@@ -20,6 +22,11 @@ void initLeds()
 
     gpio_init(LED_PIN_RED);
     gpio_set_dir(LED_PIN_RED, GPIO_OUT);
+
+    gpio_init(LED_PIN_BLUE);
+    gpio_set_dir(LED_PIN_BLUE, GPIO_OUT);
+
+    
 }
 
 void initBuzzer()
@@ -64,6 +71,11 @@ int main()
         {
             setLeds(1, 0, 0);
             printf("LED VERMELHO LIGADO!\n");
+        }
+        else if(strcmp(comando, "BLUE") == 0 || strcmp(comando, "blue") == 0)
+        {
+            setLeds(0,0,1);
+            printf("LED AZUL LIGADO!\n");
         }
         else if (strcmp(comando, "OFF") == 0 || strcmp(comando, "off") == 0)
         {
