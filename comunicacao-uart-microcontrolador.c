@@ -70,6 +70,11 @@ int main()
             setLeds(0, 0, 0);
             printf("LEDS DESLIGADOS!\n");
         }
+        else if(strcmp(comando, "WHITE") == 0 || strcmp(comando, "white") == 0)
+	    {
+            setLeds(1, 1, 1);
+            printf("LED BRANCO LIGADO!\n");
+        }
         // ACIONA O BUZZER POR 2 SEGUNDOS
         else if (strcmp(comando, "BUZZER") == 0 || strcmp(comando, "buzzer") == 0)
         {
