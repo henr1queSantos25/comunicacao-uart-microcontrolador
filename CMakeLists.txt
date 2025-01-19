@@ -28,35 +28,35 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(comunicacao-serial-microcontrolador C CXX ASM)
+project(comunicacao-uart-microcontrolador C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(comunicacao-serial-microcontrolador comunicacao-serial-microcontrolador.c )
+add_executable(comunicacao-uart-microcontrolador comunicacao-uart-microcontrolador.c )
 
-pico_set_program_name(comunicacao-serial-microcontrolador "comunicacao-serial-microcontrolador")
-pico_set_program_version(comunicacao-serial-microcontrolador "0.1")
+pico_set_program_name(comunicacao-uart-microcontrolador "comunicacao-uart-microcontrolador")
+pico_set_program_version(comunicacao-uart-microcontrolador "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(comunicacao-serial-microcontrolador 1)
-pico_enable_stdio_usb(comunicacao-serial-microcontrolador 1)
+pico_enable_stdio_uart(comunicacao-uart-microcontrolador 1)
+pico_enable_stdio_usb(comunicacao-uart-microcontrolador 1)
 
 # Add the standard library to the build
-target_link_libraries(comunicacao-serial-microcontrolador
+target_link_libraries(comunicacao-uart-microcontrolador
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(comunicacao-serial-microcontrolador PRIVATE
+target_include_directories(comunicacao-uart-microcontrolador PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(comunicacao-serial-microcontrolador 
+target_link_libraries(comunicacao-uart-microcontrolador 
         
         )
 
-pico_add_extra_outputs(comunicacao-serial-microcontrolador)
+pico_add_extra_outputs(comunicacao-uart-microcontrolador)
 
