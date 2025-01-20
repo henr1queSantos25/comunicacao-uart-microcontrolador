@@ -10,7 +10,7 @@ Este repositório contém exemplo de código voltado para a implementação e ut
 - Concluir Atividade 2 (Não obrigatória do Embarcatech).
 
 ## 📹 video do Projeto
-- **[Ver Video](https://drive.google.com/file/d/1cnQETIMx6UbuKRw7zj2zeR4Z1mioxkMB/view?usp=sharing)**
+- **[Ver Video](https://drive.google.com/file/d/1DxSElioWo7slgMCFAZF2HxSXC77gdu5Z/view?usp=sharing)**
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -20,7 +20,7 @@ Este repositório contém exemplo de código voltado para a implementação e ut
   - Pico w.
 - **Ferramentas**:
   - Wokwi.
-  - Monitor Serial.
+  - Monitor Serial (PuTTY).
 
 ## 🗂️ Estrutura do Repositório
 
@@ -49,7 +49,6 @@ Este repositório contém exemplo de código voltado para a implementação e ut
 - Configuração básica da UART.
 - Envio de strings e números pela comunicação serial e cores RGB.
 - Recebimento de dados e tratamento de entrada.
-- Debug de dados via terminal serial.
 
 ## 💡 Desenvolvido com dedicação por:
 - **[Henrique Santos.](https://github.com/henr1queSantos25)**
